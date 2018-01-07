@@ -1,0 +1,26 @@
+<!--
+this is the database for this project
+
+CREATE DATABASE USER_DATA;
+
+CREATE TABLE admin(
+	id int not null AUTO_INCREMENT,
+	username varchar(255) not null,
+	password varchar(255) not null,
+	PRIMARY KEY (id)
+);
+
+INSERT INTO admin (username,password) VALUES ('admin','$2y$10$vfpKR0/ay.xQ6TxX8u.WH.3EarXrVDywu6CH0q5rC3cNWLe3ZNsre');
+
+CREATE TABLE user_table(
+	id int not null AUTO_INCREMENT,
+	lname varchar(255) not null,
+	fname varchar(255) not null,
+	mname varchar(255),
+	gender varchar(6) not null,
+	phone varchar(13),
+	email  varchar(255) not null,	
+	username  varchar(255) not null,
+	password  varchar(255) not null,
+	PRIMARY KEY (id)
+);
