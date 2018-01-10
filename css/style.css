@@ -43,15 +43,12 @@ input {
 }
 
 a{
-
-	padding: 10px;
 	font-size:15px;
 	color: rgb(43,87,151);
-	padding: 
+	text-decoration: none;
 }
 a:hover{
 	color:white;
-	text-decoration: underline;
 }
 .link{
 	text-align: center;
