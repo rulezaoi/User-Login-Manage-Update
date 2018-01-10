@@ -11,21 +11,7 @@
 	$password = "";
 	
 	$connection = mysqli_connect('localhost','root','','USER_DATA');
-	if(isset($_POST['register'])){	
-		$username=mysqli_escape_string($connection,$_POST['username']);
-		$password = mysqli_escape_string($connection,password_hash($_POST['password'], PASSWORD_DEFAULT));
-		$password1 = mysqli_escape_string($connection,$_POST['password1']);
-		if(password_verify($password1, $password) == TRUE){
-			$query 	= ("INSERT INTO admin (username,password) VALUES ('$username','$password')");
-			mysqli_query($connection,$query);
-			$_SESSION['msg']="New Admin is successfully registered";
-			header('location: index.php');
-		}		
-		else{
-			$_SESSION['error_msg']="Passwords Do Not Match";
-			header('location: register.php');
-		}
-	}
+	
 	if(isset($_POST['save'])){
 			$last_name = mysqli_escape_string($connection,$_POST['last_name']);
 			$first_name = mysqli_escape_string($connection,$_POST['first_name']);
@@ -34,7 +20,7 @@
 			$phone = mysqli_escape_string($connection,$_POST['phone_number']);
 			$email = mysqli_escape_string($connection,$_POST['email']);
 			$username = mysqli_escape_string($connection,$_POST['username']);
-			$password= mysqli_escape_string($connection,$_POST['username']);
+			$password= mysqli_escape_string($connection,password_hash($_POST['password'], PASSWORD_DEFAULT));
 			$query 	= ("INSERT INTO user_table(lname,fname,mname,gender,phone,email,username,password) VALUES ('$last_name','$first_name','$middle_name','$gender','$phone','$email','$username','$password')");
 			mysqli_query($connection,$query);
 			$_SESSION['msg']="You Successfully Registered New User Account";
